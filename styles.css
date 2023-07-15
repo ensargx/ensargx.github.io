@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  color: #f0f0f0;
+  background-color: #272829;
+  font-size: 28px;
+}
+
+h1 {
+    font-size: 110px;
+    margin-bottom: 1rem;
+}
+
+.full-screen-section {
+  height: 100vh;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.top-section .left,
+.top-section .right {
+  flex-basis: 0;
+  flex-grow: 1;
+  padding: 1rem;
+  padding-left: 3rem;
+}
+
+.top-section {
+  height: 100vh;
+    display: flex;
+    text-align: start;
+    padding: 0;
+  }
+  
+  .top-section .left {
+    background-color: rgb(248, 250, 249, var(--background-opacity));
+  }
+
+  .top-section .right {
+    background: linear-gradient(
+      210.65deg,
+      rgb(152, 157, 157, var(--background-opacity)) 0%,
+      rgb(189, 194, 194, var(--background-opacity)) 100%
+    );
+  }
+
+.airesearch {
+  height: 200vh;
+    font-size: 50px;
+    margin-bottom: 1rem;
+    background-color: #5c6269;
+}
+
+.kayan-yazi {
+  position: sticky;
+  opacity: 0;
+}
