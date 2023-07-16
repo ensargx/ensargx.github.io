@@ -2,21 +2,36 @@ window.addEventListener("scroll", setScrollVar)
 window.addEventListener("resize", setScrollVar)
 
 function setScrollVar() {
-  const htmlElement = document.documentElement
-  const percentOfScreenHeightScrolled = htmlElement.scrollTop / htmlElement.clientHeight
-  // console.log(htmlElement.scrollTop, Math.min(percentOfScreenHeightScrolled * 100, 100))
-  // htmlElement.style.setProperty("--scroll",Math.min(percentOfScreenHeightScrolled * 100, 100))
-
   var airesearch = document.querySelector(".airesearch");
-  var airesearch_top = airesearch.getBoundingClientRect().top;
-  var airesearch_height = airesearch.getBoundingClientRect().height;
-  var kayan_yazi = document.querySelector(".kayan-yazi");
-  console.log(airesearch_top, airesearch_height)
-  if(airesearch_top < airesearch_height/2 && airesearch_top > -airesearch_height/2){
-    console.log("girdi")
-    kayan_yazi.classList.add('active');
+  var webdew = document.querySelector(".webdew");
+  
+  var percentage_airesearch = getSectionPercent(airesearch);
+  var percentage_webdew = getSectionPercent(webdew);
+  
+  if(percentage_airesearch > 0 && percentage_airesearch < 200) {
+    //console.log(percentage_airesearch)
+    var kayan_yazi = document.querySelector(".kayan-yazi");
+    //kayan_yazi.style.transform = "translateX(" + percentage_airesearch + "%)";
+    var trans = 5 * percentage_airesearch - 100;
+
+    // when truns is -100<trans<0, it will change the position of the text
+
+    
+
+    console.log(trans);
+    if(trans > -100 && trans < 0) {
+      kayan_yazi.style.transform = "translateX(" + trans + "%)";  
+    }
   }
 
+
+  //console.log(percentage_webdew)
+}
+
+function getSectionPercent(section) {
+  var sectionTop = section.getBoundingClientRect().top
+  var percentage = ((window.innerHeight - sectionTop) / window.innerHeight) * 100
+  return percentage
 }
 
 setScrollVar()

@@ -55,13 +55,13 @@ h1 {
   height: 100vh;
     font-size: 50px;
     margin-bottom: 1rem;
-    /* background-color: #5c6269; */
+    background-color: #5c6269; 
 }
 
 .kayan-yazi {
   position: relative;
   width: 100%;
-  opacity: 0;
+  opacity: 1;
   transform: translateX(-100%);
   transition: opacity 0.5s, transform 0.5s;
 }
