@@ -52,13 +52,21 @@ h1 {
   }
 
 .airesearch {
-  height: 200vh;
+  height: 100vh;
     font-size: 50px;
     margin-bottom: 1rem;
-    background-color: #5c6269;
+    /* background-color: #5c6269; */
 }
 
 .kayan-yazi {
-  position: sticky;
+  position: relative;
+  width: 100%;
   opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.kayan-yazi.active {
+  transform: translateX(0%);
+  opacity: 1;
 }

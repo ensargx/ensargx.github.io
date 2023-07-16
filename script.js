@@ -7,16 +7,14 @@ function setScrollVar() {
   // console.log(htmlElement.scrollTop, Math.min(percentOfScreenHeightScrolled * 100, 100))
   // htmlElement.style.setProperty("--scroll",Math.min(percentOfScreenHeightScrolled * 100, 100))
 
+  var airesearch = document.querySelector(".airesearch");
+  var airesearch_top = airesearch.getBoundingClientRect().top;
+  var airesearch_height = airesearch.getBoundingClientRect().height;
   var kayan_yazi = document.querySelector(".kayan-yazi");
-  var kayan_yazi_top = kayan_yazi.getBoundingClientRect().top;
-  var kayan_yazi_height = kayan_yazi.offsetHeight;
-  console.log(kayan_yazi_top, kayan_yazi_height)
-  if (kayan_yazi_top < 0 && kayan_yazi_top > -kayan_yazi_height) {
-    var percentage = (-kayan_yazi_top) / kayan_yazi_height;
-    console.log(percentage * 100)
-    if(percentage*100 < 20) {
-      kayan_yazi.style.opacity = 1;
-    }
+  console.log(airesearch_top, airesearch_height)
+  if(airesearch_top < airesearch_height/2 && airesearch_top > -airesearch_height/2){
+    console.log("girdi")
+    kayan_yazi.classList.add('active');
   }
 
 }
